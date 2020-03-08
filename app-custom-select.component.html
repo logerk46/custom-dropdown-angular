@@ -1,0 +1,30 @@
+<div class="dropdown">
+    <button class="select-trigger" (click)="open(dropdown, origin)" #origin>
+
+        <ng-template [ngIf]="!isOpened" [ngIfElse]="searchTpl">
+            {{ label }} 
+            <mat-icon *ngIf="!model" aria-hidden="false" class="float-right" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+        </ng-template>
+
+        <ng-template #searchTpl>
+            <input [formControl]="searchControl" placeholder="Search.." autofocus (click)="$event.stopPropagation()">
+        </ng-template>
+
+
+    </button>
+
+    <ng-template #dropdown [ngIf]="isOpened">
+        <div class="select-menu">
+            <cdk-virtual-scroll-viewport itemSize="55" class="select-menu-inner"
+                [style.height.px]="visibleOptions * 100">
+                <div *ngIf="!options.length" class="no-results-item">Not found</div>
+                <div *ngIf="defaultValue" class="select-item" (click)="select(defaultValue)">
+                  {{ defaultValue[labelKey]}}</div>
+                <div *cdkVirtualFor="let option of options" class="select-item " (click)="select(option)">
+                    <div>{{option[labelKey]}}</div>
+                </div>
+            </cdk-virtual-scroll-viewport>
+        </div>
+    </ng-template>
+
+</div>

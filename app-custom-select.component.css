@@ -1,0 +1,77 @@
+.select-menu {
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    overflow-x: hidden;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .15);
+}
+  
+.select-trigger {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-height: 40px;
+    overflow: hidden;
+    font-family: MuseoSyns-regular;
+    width: 100%;
+    background: transparent;
+    border: 2px solid lightgray;
+    border-radius: 50px;
+    text-align: left;
+    padding: 7px 17px 3px;
+    font-size: 15px;
+    color: gray;
+    cursor: pointer;
+}
+
+.select-trigger:focus {
+        outline: none;
+}
+  
+.select-menu-inner {
+    width: inherit;
+    max-height: 128px;
+}
+  
+  
+input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+}
+  
+  
+.select-item {
+    padding: 15px 7px;
+    min-height: 50px;
+    max-height: 100px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.select-item:hover {
+    background-color: whitesmoke;
+}
+
+.select-item .active {
+    background-color: deeppink;
+    color: #fff;
+}
+  
+  .no-results-item {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 7px;
+    font-size: 14px;
+  }
